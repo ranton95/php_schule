@@ -12,6 +12,13 @@ ini_set("display_errors", "on");
 // file: data_evaluate.php   
 
 
+// define some needful arrays
+$intr_list = [
+    "rwd" => "Responsive Web Design",
+    "wp" => "WordPress",
+    "t3" => "TYPO3",
+];
+
 
 // required fields 
 if( empty($_REQUEST['lastname']) || 
@@ -75,6 +82,7 @@ else {
         $intrs = $_REQUEST['intrs'];
         foreach ($intrs as $intr) {
             echo "<li>$intr</li>";
+            echo "<li>" . $intr_list[$intr] . "</li>";
         }
         echo "</ul>";
      
