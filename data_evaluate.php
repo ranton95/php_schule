@@ -42,11 +42,24 @@ else {
     echo "<strong>Date Of Birth:</strong> $dob<br>";
     echo "<strong>Favorites:</strong><br>";
 
-    echo "<ul>";
-    foreach($favs as $fav) {
-        echo "<li>$fav</li>";
-    } 
-    echo "</ul>";
+    // echo "<ul>";
+    // foreach($favs as $fav) {
+    //     echo "<li>$fav</li>";
+    // } 
+    // echo "</ul>";
+
+
+    if (isset($_REQUEST['favs']) && is_array($_REQUEST['favs'])) {
+        echo "<ul>";
+        $favs = $_REQUEST['favs'];
+        foreach ($favs as $fav) {
+            echo "<li>$fav</li>";
+        }
+        echo "</ul>";
+     
+    } else {
+        echo "n.a<br>";
+    }
 
     /*
      echo "<pre>";
@@ -55,6 +68,19 @@ else {
     */
     //echo "<strong>Favorites:</strong> $favs<br>";
     echo "</p>";
+    echo "<h2>Interests:</h2>";
+    echo "<p>";
+    if (isset($_REQUEST['intrs']) && is_array($_REQUEST['intrs'])) {
+        echo "<ul>";
+        $intrs = $_REQUEST['intrs'];
+        foreach ($intrs as $intr) {
+            echo "<li>$intr</li>";
+        }
+        echo "</ul>";
+     
+    } else {
+        echo "n.a<br>";
+    }
 }
 ?>
     

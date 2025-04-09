@@ -21,6 +21,14 @@
         label::after {
             content: ":";
         }
+
+        input[type="checkbox"] + label::after {
+            content: "";
+        }
+
+        input[type="checkbox"] + label {
+            width: auto;
+        }
        
         form {
             border: 1px solid black;
@@ -85,7 +93,19 @@
         </select>
     </div> 
 
-   
+    <div class="form-row">
+        <fieldset>
+            <legend>Interests</legend>
+            <input id="intr_rwd" type="checkbox" name = "intrs[]" value="rwd">
+            <label id = "intr_rwd">Responsive Web Design</label>
+    
+            <input id="intr_wp" type="checkbox" name = "intrs[]" value="wp">
+            <label id = "intr_wp">Wordpress</label>
+            
+            <input id="intr_t3" type="checkbox" name = "intrs[]" value="t3">
+            <label id = "intr_t3">Typo3</label>
+        </fieldset>
+    </div>
     
     <div class = "form-row">
         <button>Go!</button>
